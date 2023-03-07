@@ -1,22 +1,15 @@
 import logo from './logo.svg';
+import pokeDex from './Pokedex';
+import PokeCard from './Pokecard';
 import './App.css';
 
 function App() {
+  const pokemon = pokeDex.map((p,id) => < PokeCard key={id} id={p.id} name={p.name} type={p.type} base_experience={p.base_experience}/>)
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {pokemon}
       </header>
     </div>
   );
